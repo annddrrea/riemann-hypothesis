@@ -384,6 +384,7 @@ theorem exists_nsmul_mem {p : ℕ} (hp : p.Prime) (L : Submodule (𝓞 E) (Fin n
   obtain ⟨s, hs, hsx⟩ := h ⟨Q, hQ, fun e => hp.ne_zero (by simpa [e] using hpQ)⟩ hpQ
   exact hs (hIQ hsx)
 
+-- Simplify the identity matrix in the dot-product expression for the Hermitian form.
 theorem herm_one (x y : Fin n → E) : herm 1 x y = stdForm x y := by
   rw [GlobalTheory.SelfDualGenus.herm_eq_dotProduct, Matrix.vecMul_one]
   rfl
